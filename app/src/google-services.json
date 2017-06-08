@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "104239595224",
+    "firebase_url": "https://dummyinput-b7ed6.firebaseio.com",
+    "project_id": "dummyinput-b7ed6",
+    "storage_bucket": "dummyinput-b7ed6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104239595224:android:05166ea1eabacb0e",
+        "android_client_info": {
+          "package_name": "com.example.snehitsagi.plan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104239595224-rulp27lqjv83vulioedap1puqvq5tog0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVNfQvdqX5Y6jKq0um2CGFNYKsQCK_4N4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "432549406426",
+    "firebase_url": "https://plan-82422.firebaseio.com",
+    "project_id": "plan-82422",
+    "storage_bucket": "plan-82422.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432549406426:android:05166ea1eabacb0e",
+        "android_client_info": {
+          "package_name": "com.example.snehitsagi.plan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432549406426-5tec7q2nvhtogi8iu6d11ul2rrsnksdo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.snehitsagi.plan",
+            "certificate_hash": "a1c723bed93de4e47df69563b825ce45b32327ef"
+          }
+        },
+        {
+          "client_id": "432549406426-08vbmloj4athepcpscj005kk0lbtia32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx4oYO-bRBb9mCf_35BBZT_GJzc8ZksxY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432549406426-08vbmloj4athepcpscj005kk0lbtia32.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
