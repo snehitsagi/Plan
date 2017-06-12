@@ -1,6 +1,7 @@
 package com.example.snehitsagi.plan;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -68,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                                 progressDialog.dismiss();
 
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
-                                    //add intent here
+                                    Intent i = new Intent(MainActivity.this,input.class);
+                                    startActivity(i);
                                 } else {
                                     Log.e("ERROR",task.getException().toString());
                                     Toast.makeText(MainActivity.this, "Login Fail", Toast.LENGTH_SHORT).show();
@@ -88,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(MainActivity.this, "Email Mandatory", Toast.LENGTH_SHORT).show();
-                    return;
 
                 }
                 if(TextUtils.isEmpty(password)){
@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
                                 progressDialog.dismiss();
 
                                 if (task.isSuccessful()) {
-                                    //signin succesfull add activity here
-                                    Toast.makeText(MainActivity.this, "Successfull", Toast.LENGTH_SHORT).show();
+                                    Intent i = new Intent(MainActivity.this,input.class);
+                                    startActivity(i);
                                 } else {
                                     Toast.makeText(MainActivity.this, "Fail", Toast.LENGTH_SHORT).show();
                                 }

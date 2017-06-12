@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/SpouseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/name"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignRight="@+id/name"
+        android:layout_alignStart="@+id/name"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Spouse Name"
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/phoneNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/SpouseName"
+        android:layout_alignLeft="@+id/SpouseName"
+        android:layout_alignRight="@+id/SpouseName"
+        android:layout_alignStart="@+id/SpouseName"
+        android:layout_below="@+id/SpouseName"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Enter Phone Number"
+        android:inputType="phone"
+        android:textSize="24sp"/>
+
+    <EditText
+        android:id="@+id/emailid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/phoneNo"
+        android:layout_alignLeft="@+id/phoneNo"
+        android:layout_alignRight="@+id/phoneNo"
+        android:layout_alignStart="@+id/phoneNo"
+        android:layout_below="@+id/phoneNo"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/emailid"
+        android:layout_alignLeft="@+id/emailid"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/emailid"
+        android:layout_alignStart="@+id/emailid"
+        android:layout_marginBottom="25dp"
+        android:text="ADD NEW MEMBER"
+        android:textColor="#ffffff"
+        android:padding="12dp"
+        android:textSize="24sp"
+        android:background="@color/colorAccent"/>
+
+    <Button
+        android:id="@+id/picDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/emailid"
+        android:layout_alignStart="@+id/emailid"
+        android:layout_below="@+id/emailid"
+        android:text="DOB"
+        android:textSize="22sp"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/showDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/picDate"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/picDate"
+        android:layout_toRightOf="@+id/picDate"
+        android:text="Not Provided"
+        android:textSize="24dp"
+        />
+
+    <Button
+        android:id="@+id/pickDate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/picDate"
+        android:layout_alignStart="@+id/picDate"
+        android:layout_below="@+id/picDate"
+        android:text="DOW"
+        android:textSize="22sp"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/showDate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pickDate2"
+        android:layout_alignLeft="@+id/showDate"
+        android:layout_alignStart="@+id/showDate"
+        android:layout_marginBottom="10dp"
+        android:text="Not Provided"
+        android:textSize="24dp"/>
+
+
+</RelativeLayout>
+
