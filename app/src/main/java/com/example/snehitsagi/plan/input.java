@@ -61,8 +61,8 @@ public class input extends AppCompatActivity{
         dowpick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogFragment fragment = new DatePickerFragment();
-                fragment.show(getFragmentManager(), "DOW Picker");
+                DialogFragment fragment2 = new DatePickerFragment();
+                fragment2.show(getFragmentManager(), "DOW Picker");
                 Intent in = getIntent();
                 String finaldate=in.getStringExtra("finaldate");
                 dowTextView.setText(finaldate);

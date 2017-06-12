@@ -7,9 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.DatePicker;
 
-import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 /**
  * Created by Snehit Sagi on 11-Jun-17.
@@ -30,11 +28,14 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
-        Calendar cal = new GregorianCalendar(year, month, day);
+        /*Calendar cal = new GregorianCalendar(year, month, day);
         final DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
         String finalDate = dateFormat.format(cal.getTime());
         Intent in = new Intent(getActivity(),input.class);
-        in.putExtra("finaldate",finalDate);
+        in.putExtra("finaldate",finalDate);*/
+        String finaldate = view.getDayOfMonth()+"/"+view.getMonth()+"/"+view.getYear();
+        Intent in = new Intent(getActivity(),input.class);
+        in.putExtra("finaldate",finaldate);
 
     }
 }
