@@ -10,20 +10,23 @@ public class Members {
     String memberspouse;
     String memberphone;
     String memberemail;
-    String memeberdob;
+    String memberdob;
     String memberdow;
+    String memberdoj;
     String id;
 
     public Members(){
 
     }
 
-    public Members(String id,String membername, String memberspouse, String memberphone, String memberemail, String memberdob) {
+    public Members(String id,String membername, String memberspouse, String memberphone, String memberemail, String memberdob, String memberdow,String memberdoj) {
         this.membername = membername;
         this.memberspouse = memberspouse;
         this.memberphone = memberphone;
         this.memberemail = memberemail;
-        this.memeberdob=memberdob;
+        this.memberdob=memberdob;
+        this.memberdow=memberdow;
+        this.memberdoj=memberdoj;
 
     }
 
@@ -44,6 +47,12 @@ public class Members {
     }
 
     public String getMemberdob() {
-        return memeberdob;
+        return memberdob;
+    }
+    public String getMemberdow() {
+        return memberdow;
+    }
+    public String getMemberdoj() {
+        return memberdoj;
     }
 }

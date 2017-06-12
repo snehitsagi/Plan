@@ -1,8 +1,6 @@
 package com.example.snehitsagi.plan;
 
 import android.app.DatePickerDialog;
-import android.app.DialogFragment;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -18,27 +16,22 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
-
-import static com.example.snehitsagi.plan.R.id.picDate;
-import static com.example.snehitsagi.plan.R.id.pickDate2;
-import static com.example.snehitsagi.plan.R.id.showDate;
-import static com.example.snehitsagi.plan.R.id.showDate2;
+import java.util.Date;
 
 public class input extends AppCompatActivity implements View.OnClickListener{
 
     EditText memberName;
     EditText spouseName;
     EditText phoneNo;
-    int date,month,year;
     EditText emailid;
     Button addbutton;
     Button dobpick;
     Button dowpick;
+    Button dojpick;
     TextView dobTextView;
     TextView dowTextView;
+    TextView dojTextView;
     DatabaseReference databaseMembers;
-    private DatePickerDialog fromDatePickerDialog;
-    private java.text.SimpleDateFormat dateFormatter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +41,16 @@ public class input extends AppCompatActivity implements View.OnClickListener{
         databaseMembers= FirebaseDatabase.getInstance().getReference("members");
 
         //date picker begin
-        dobpick=(Button) findViewById(picDate);
-        dobTextView=(TextView) findViewById(showDate);
-        dowpick=(Button) findViewById(pickDate2);
-        dowTextView=(TextView) findViewById(showDate2);
+        dobpick=(Button) findViewById(R.id.pickDOB);
+        dobTextView=(TextView) findViewById(R.id.showDOB);
+        dowpick=(Button) findViewById(R.id.pickDOW);
+        dowTextView=(TextView) findViewById(R.id.showDOW);
+        dojpick=(Button) findViewById(R.id.pickDOJ);
+        dojTextView=(TextView) findViewById(R.id.showDOJ);
 
         dobpick.setOnClickListener(this);
-//
         dowpick.setOnClickListener(this);
+        dojpick.setOnClickListener(this);
 
         memberName=(EditText)findViewById(R.id.name);
         if( memberName.getText().toString().length() == 0 )
@@ -77,8 +72,10 @@ public class input extends AppCompatActivity implements View.OnClickListener{
                 String mobileno=phoneNo.getText().toString().trim();
                 String email=emailid.getText().toString().trim();
                 String dob=dobTextView.getText().toString().trim();
+                String dow=dowTextView.getText().toString().trim();
+                String doj=dojTextView.getText().toString().trim();
                 String id=databaseMembers.push().getKey();
-                Members member=new Members(id,name,spouse,mobileno,email,dob);
+                Members member=new Members(id,name,spouse,mobileno,email,dob,dow,doj);
                 databaseMembers.child(id).setValue(member);
 
                 Toast.makeText(input.this, "New member added", Toast.LENGTH_SHORT).show();
@@ -88,7 +85,8 @@ public class input extends AppCompatActivity implements View.OnClickListener{
                 phoneNo.setText("");
                 emailid.setText("");
                 dobTextView.setText("Not provided");
-
+                dowTextView.setText("Not provided");
+                dojTextView.setText("Not provided");
             }
         });
     }
@@ -98,25 +96,57 @@ public class input extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         if(v==dobpick)
         {
-            final Calendar c= Calendar.getInstance();
+            Calendar c= Calendar.getInstance();
+            int $year=c.get(Calendar.YEAR);
+            int $month = c.get(Calendar.MONTH);
+            int $date = c.get(Calendar.DAY_OF_MONTH);
+            c.setTime(new Date());
+            c.add(Calendar.YEAR,-27);
+            long maxDate=c.getTime().getTime();
             DatePickerDialog dp=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                    dobTextView.setText(dayOfMonth+"/"+month+"/"+year);
+                    dobTextView.setText(dayOfMonth+"/"+(month+1)+"/"+year);
                 }
-            },date,month,year);
+            },$date,$month,$year);
+            dp.getDatePicker().setMaxDate(maxDate);
             dp.show();
         }
         if(v==dowpick)
         {
-            final Calendar cd= Calendar.getInstance();
+            Calendar cd= Calendar.getInstance();
+            int $year=cd.get(Calendar.YEAR);
+            int $month = cd.get(Calendar.MONTH);
+            int $date = cd.get(Calendar.DAY_OF_MONTH);
+            cd.setTime(new Date());
+            cd.add(Calendar.YEAR,-27);
+            long maxDate=cd.getTime().getTime();
             DatePickerDialog dpk=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                    dowTextView.setText(dayOfMonth+"/"+month+"/"+year);
+                    dowTextView.setText(dayOfMonth+"/"+(month+1)+"/"+year);
                 }
-            },date,month,year);
+            },$date,$month,$year);
+            dpk.getDatePicker().setMaxDate(maxDate);
             dpk.show();
+        }
+        if(v==dojpick)
+        {
+            Calendar cdm= Calendar.getInstance();
+            int $year=cdm.get(Calendar.YEAR);
+            int $month = cdm.get(Calendar.MONTH);
+            int $date = cdm.get(Calendar.DAY_OF_MONTH);
+            cdm.setTime(new Date());
+            cdm.add(Calendar.YEAR,-27);
+            long maxDate=cdm.getTime().getTime();
+            DatePickerDialog dpm=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    dojTextView.setText(dayOfMonth+"/"+(month+1)+"/"+year);
+                }
+            },$date,$month,$year);
+            dpm.getDatePicker().setMaxDate(maxDate);
+            dpm.show();
         }
     }
 }

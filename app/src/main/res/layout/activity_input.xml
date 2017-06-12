@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+<!--<ScrollView android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/scroll"
+    android:fillViewport="false">-->
+<RelativeLayout
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -66,23 +71,7 @@
         android:textSize="24sp"/>
 
     <Button
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/emailid"
-        android:layout_alignLeft="@+id/emailid"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/emailid"
-        android:layout_alignStart="@+id/emailid"
-        android:layout_marginBottom="25dp"
-        android:text="ADD NEW MEMBER"
-        android:textColor="#ffffff"
-        android:padding="12dp"
-        android:textSize="24sp"
-        android:background="@color/colorAccent"/>
-
-    <Button
-        android:id="@+id/picDate"
+        android:id="@+id/pickDOB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/emailid"
@@ -93,41 +82,80 @@
         android:layout_marginTop="12dp"/>
 
     <TextView
-        android:id="@+id/showDate"
+        android:id="@+id/showDOB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/picDate"
+        android:layout_alignTop="@+id/pickDOB"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
-        android:layout_toEndOf="@+id/picDate"
-        android:layout_toRightOf="@+id/picDate"
+        android:layout_toEndOf="@+id/pickDOB"
+        android:layout_toRightOf="@+id/pickDOB"
         android:text="Not Provided"
         android:textSize="24dp"
         />
 
     <Button
-        android:id="@+id/pickDate2"
+        android:id="@+id/pickDOW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/picDate"
-        android:layout_alignStart="@+id/picDate"
-        android:layout_below="@+id/picDate"
+        android:layout_alignLeft="@+id/pickDOB"
+        android:layout_alignStart="@+id/pickDOB"
+        android:layout_below="@+id/pickDOB"
         android:text="DOW"
         android:textSize="22sp"
         android:layout_marginTop="12dp"/>
 
     <TextView
-        android:id="@+id/showDate2"
+        android:id="@+id/showDOW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/pickDate2"
-        android:layout_alignLeft="@+id/showDate"
-        android:layout_alignStart="@+id/showDate"
+        android:layout_alignBottom="@+id/pickDOW"
+        android:layout_alignLeft="@+id/showDOB"
+        android:layout_alignStart="@+id/showDOB"
         android:layout_marginBottom="10dp"
         android:text="Not Provided"
         android:textSize="24dp"/>
 
+    <Button
+        android:id="@+id/pickDOJ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DOJ"
+        android:textSize="22sp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/pickDOW"
+        android:layout_alignLeft="@+id/pickDOW"
+        android:layout_alignStart="@+id/pickDOW" />
+
+    <TextView
+        android:id="@+id/showDOJ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pickDOJ"
+        android:layout_alignLeft="@+id/showDOW"
+        android:layout_alignStart="@+id/showDOW"
+        android:layout_marginBottom="10dp"
+        android:text="Not Provided"
+        android:textSize="24dp"/>
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD MEMBER"
+        android:textSize="22sp"
+        android:padding="5dp"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"
+        android:layout_below="@+id/pickDOJ"
+        android:layout_marginTop="14dp"
+        android:layout_alignRight="@+id/emailid"
+        android:layout_alignEnd="@+id/emailid"
+        android:layout_alignLeft="@+id/pickDOJ"
+        android:layout_alignStart="@+id/pickDOJ" />
+
 
 </RelativeLayout>
-
+    <!--
+    </ScrollView>-->
