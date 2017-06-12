@@ -36,6 +36,5 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         String finaldate = view.getDayOfMonth()+"/"+view.getMonth()+"/"+view.getYear();
         Intent in = new Intent(getActivity(),input.class);
         in.putExtra("finaldate",finaldate);
-
     }
 }

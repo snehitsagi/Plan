@@ -3,10 +3,13 @@ package com.example.snehitsagi.plan;
 import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,16 +17,19 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
+
 import static com.example.snehitsagi.plan.R.id.picDate;
 import static com.example.snehitsagi.plan.R.id.pickDate2;
 import static com.example.snehitsagi.plan.R.id.showDate;
 import static com.example.snehitsagi.plan.R.id.showDate2;
 
-public class input extends AppCompatActivity{
+public class input extends AppCompatActivity implements View.OnClickListener{
 
     EditText memberName;
     EditText spouseName;
     EditText phoneNo;
+    int date,month,year;
     EditText emailid;
     Button addbutton;
     Button dobpick;
@@ -47,28 +53,9 @@ public class input extends AppCompatActivity{
         dowpick=(Button) findViewById(pickDate2);
         dowTextView=(TextView) findViewById(showDate2);
 
-        dobpick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DialogFragment fragment = new DatePickerFragment();
-                fragment.show(getFragmentManager(), "DOB Picker");
-                Intent in = getIntent();
-                String finaldate=in.getStringExtra("finaldate");
-                dobTextView.setText(finaldate);
-            }
-        });
-
-        dowpick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DialogFragment fragment2 = new DatePickerFragment();
-                fragment2.show(getFragmentManager(), "DOW Picker");
-                Intent in = getIntent();
-                String finaldate=in.getStringExtra("finaldate");
-                dowTextView.setText(finaldate);
-            }
-        });
-        //date picker end
+        dobpick.setOnClickListener(this);
+//
+        dowpick.setOnClickListener(this);
 
         memberName=(EditText)findViewById(R.id.name);
         if( memberName.getText().toString().length() == 0 )
@@ -106,4 +93,30 @@ public class input extends AppCompatActivity{
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @Override
+    public void onClick(View v) {
+        if(v==dobpick)
+        {
+            final Calendar c= Calendar.getInstance();
+            DatePickerDialog dp=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    dobTextView.setText(dayOfMonth+"/"+month+"/"+year);
+                }
+            },date,month,year);
+            dp.show();
+        }
+        if(v==dowpick)
+        {
+            final Calendar cd= Calendar.getInstance();
+            DatePickerDialog dpk=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    dowTextView.setText(dayOfMonth+"/"+month+"/"+year);
+                }
+            },date,month,year);
+            dpk.show();
+        }
+    }
 }
