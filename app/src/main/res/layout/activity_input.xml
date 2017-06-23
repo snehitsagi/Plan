@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<ScrollView android:layout_height="wrap_content"
+<ScrollView android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:id="@+id/scroll"
-    android:fillViewport="false">-->
+    android:fillViewport="false">
 <RelativeLayout
     android:layout_height="match_parent"
     android:layout_width="match_parent"
@@ -79,15 +79,15 @@
         android:layout_below="@+id/emailid"
         android:text="DOB"
         android:textSize="22sp"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="28dp"/>
 
     <TextView
         android:id="@+id/showDOB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/pickDOB"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="12dp"
         android:layout_toEndOf="@+id/pickDOB"
         android:layout_toRightOf="@+id/pickDOB"
@@ -139,6 +139,128 @@
         android:text="Not Provided"
         android:textSize="24dp"/>
 
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/pickDOJ"
+        android:hint="Address Line"
+        android:layout_alignLeft="@+id/pickDOJ"
+        android:layout_alignStart="@+id/pickDOJ"
+        android:layout_alignRight="@+id/emailid"
+        android:layout_alignEnd="@+id/emailid"
+        android:layout_marginTop="24dp"
+        android:textSize="24sp"/>
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address"
+        android:ems="10"
+        android:hint="City/Town"
+        android:layout_alignLeft="@+id/pickDOJ"
+        android:layout_alignStart="@id/pickDOJ"
+        android:layout_alignRight="@id/emailid"
+        android:layout_alignEnd="@id/emailid"
+        android:layout_marginTop="12dp"
+        android:textSize="24sp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/city"
+        android:id="@+id/state"
+        android:layout_alignStart="@id/pickDOJ"
+        android:layout_alignLeft="@id/pickDOJ"
+        android:layout_alignRight="@id/emailid"
+        android:layout_alignEnd="@id/emailid"
+        android:layout_marginTop="12dp"
+        android:textSize="24sp"
+        android:hint="State"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/country"
+        android:layout_below="@id/state"
+        android:layout_marginTop="18dp"
+        android:layout_alignLeft="@id/pickDOJ"
+        android:layout_alignStart="@id/pickDOJ"
+        android:layout_alignRight="@id/emailid"
+        android:layout_alignEnd="@id/emailid"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/postalcode"
+        android:layout_below="@id/country"
+        android:layout_marginTop="18dp"
+        android:layout_alignLeft="@id/pickDOJ"
+        android:layout_alignStart="@id/pickDOJ"
+        android:layout_alignRight="@id/emailid"
+        android:layout_alignEnd="@id/emailid"
+        android:textSize="24sp"
+        android:hint="Postal Code"
+        android:inputType="number"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/postalcode"
+        android:id="@+id/prof"
+        android:layout_alignLeft="@id/pickDOJ"
+        android:layout_alignStart="@id/pickDOJ"
+        android:layout_alignRight="@id/emailid"
+        android:layout_alignEnd="@id/emailid"
+        android:layout_marginTop="12dp"
+        android:textSize="24sp"
+        android:hint="Profession"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prof"
+        android:id="@+id/expert"
+        android:layout_alignLeft="@+id/pickDOJ"
+        android:layout_alignStart="@id/pickDOJ"
+        android:layout_alignRight="@id/emailid"
+        android:layout_alignEnd="@id/emailid"
+        android:textSize="24sp"
+        android:layout_marginTop="12dp"
+        android:hint="Expertise"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expert"
+        android:id="@+id/spl"
+        android:layout_alignLeft="@id/pickDOJ"
+        android:layout_alignStart="@id/pickDOJ"
+        android:layout_alignRight="@id/emailid"
+        android:layout_alignEnd="@id/emailid"
+        android:textSize="24sp"
+        android:layout_marginTop="12dp"
+        android:hint="Special Recognition"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/img"
+        android:layout_below="@id/expert"
+        android:layout_alignLeft="@id/pickDOJ"
+        android:layout_alignStart="@id/pickDOJ"
+        android:layout_alignRight="@id/emailid"
+        android:layout_alignEnd="@id/emailid"
+        android:text="UPLOAD IMAGE"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:layout_marginTop="12dp"/>
+
     <Button
         android:id="@+id/addButton"
         android:layout_width="match_parent"
@@ -148,14 +270,13 @@
         android:padding="5dp"
         android:background="@color/colorAccent"
         android:textColor="#FFF"
-        android:layout_below="@+id/pickDOJ"
-        android:layout_marginTop="14dp"
-        android:layout_alignRight="@+id/emailid"
-        android:layout_alignEnd="@+id/emailid"
-        android:layout_alignLeft="@+id/pickDOJ"
-        android:layout_alignStart="@+id/pickDOJ" />
-
+        android:layout_below="@+id/img"
+        android:layout_alignLeft="@+id/city"
+        android:layout_alignStart="@+id/city"
+        android:layout_alignRight="@+id/city"
+        android:layout_alignEnd="@+id/city"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="28dp"/>
 
 </RelativeLayout>
-    <!--
-    </ScrollView>-->
+    </ScrollView>

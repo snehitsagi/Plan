@@ -16,5 +16,14 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
+    
+    <style name="spinnerText"  parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    
+    <style name="spinnerItem" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textSize">24sp</item>
+    </style>
+    
 </resources>
